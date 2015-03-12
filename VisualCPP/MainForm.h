@@ -1,6 +1,8 @@
 #pragma once
 
 #include "IMFConditions.h"
+#include "KingConditions.h"
+#include "ClusterConditions.h"
 
 namespace MassCluster {
 
@@ -42,9 +44,11 @@ namespace MassCluster {
 	protected:
 	private: System::Windows::Forms::Button^  btnRunAll;
 	private: System::Windows::Forms::Button^  btnClose;
-	private: System::Windows::Forms::TabControl^  tabControl1;
-	private: System::Windows::Forms::TabPage^  tabCCM;
+
+
 	private: System::Windows::Forms::Button^  btnSetIMF;
+	private: System::Windows::Forms::Button^  btnSetKing;
+	private: System::Windows::Forms::Button^  btnClusterConditions;
 
 	private: System::ComponentModel::IContainer^  components;
 
@@ -93,9 +97,23 @@ namespace MassCluster {
 	{
 		IMFConditions ^ newForm = gcnew IMFConditions(this);
 		newForm->Show();
-		this->Hide();
+		//this->Hide();
 	}
 
+	private: System::Void btnSetKing_Click(System::Object^  sender, System::EventArgs^  e) 
+	{
+		KingConditions ^ newForm = gcnew KingConditions(this);
+		newForm->Show();
+		//this->Hide();
+	}
+
+
+	private: System::Void btnClusterConditions_Click(System::Object^  sender, System::EventArgs^  e) 
+	{
+		ClusterConditions ^ newForm = gcnew ClusterConditions(this);
+		newForm->Show();
+		//this->Hide();
+	}
 
 #pragma endregion
 
@@ -112,10 +130,9 @@ namespace MassCluster {
 			this->pgBar = (gcnew System::Windows::Forms::ProgressBar());
 			this->btnRunAll = (gcnew System::Windows::Forms::Button());
 			this->btnClose = (gcnew System::Windows::Forms::Button());
-			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->tabCCM = (gcnew System::Windows::Forms::TabPage());
 			this->btnSetIMF = (gcnew System::Windows::Forms::Button());
-			this->tabControl1->SuspendLayout();
+			this->btnSetKing = (gcnew System::Windows::Forms::Button());
+			this->btnClusterConditions = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// pgBar
@@ -155,29 +172,10 @@ namespace MassCluster {
 			this->btnClose->UseVisualStyleBackColor = false;
 			this->btnClose->Click += gcnew System::EventHandler(this, &MainForm::btnClose_Click);
 			// 
-			// tabControl1
-			// 
-			this->tabControl1->Controls->Add(this->tabCCM);
-			this->tabControl1->Location = System::Drawing::Point(211, 13);
-			this->tabControl1->Name = L"tabControl1";
-			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(661, 437);
-			this->tabControl1->TabIndex = 3;
-			// 
-			// tabCCM
-			// 
-			this->tabCCM->Location = System::Drawing::Point(4, 22);
-			this->tabCCM->Name = L"tabCCM";
-			this->tabCCM->Padding = System::Windows::Forms::Padding(3);
-			this->tabCCM->Size = System::Drawing::Size(653, 411);
-			this->tabCCM->TabIndex = 0;
-			this->tabCCM->Text = L"CCM";
-			this->tabCCM->UseVisualStyleBackColor = true;
-			// 
 			// btnSetIMF
 			// 
 			this->btnSetIMF->BackColor = System::Drawing::Color::Silver;
-			this->btnSetIMF->Font = (gcnew System::Drawing::Font(L"Arial Black", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnSetIMF->Font = (gcnew System::Drawing::Font(L"Arial Black", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnSetIMF->ForeColor = System::Drawing::Color::Black;
 			this->btnSetIMF->Location = System::Drawing::Point(14, 42);
@@ -188,14 +186,43 @@ namespace MassCluster {
 			this->btnSetIMF->UseVisualStyleBackColor = false;
 			this->btnSetIMF->Click += gcnew System::EventHandler(this, &MainForm::btnSetIMF_Click);
 			// 
+			// btnSetKing
+			// 
+			this->btnSetKing->BackColor = System::Drawing::Color::Silver;
+			this->btnSetKing->Font = (gcnew System::Drawing::Font(L"Arial Black", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnSetKing->ForeColor = System::Drawing::Color::Black;
+			this->btnSetKing->Location = System::Drawing::Point(14, 88);
+			this->btnSetKing->Name = L"btnSetKing";
+			this->btnSetKing->Size = System::Drawing::Size(191, 40);
+			this->btnSetKing->TabIndex = 5;
+			this->btnSetKing->Text = L"Set King Conditions";
+			this->btnSetKing->UseVisualStyleBackColor = false;
+			this->btnSetKing->Click += gcnew System::EventHandler(this, &MainForm::btnSetKing_Click);
+			// 
+			// btnClusterConditions
+			// 
+			this->btnClusterConditions->BackColor = System::Drawing::Color::Silver;
+			this->btnClusterConditions->Font = (gcnew System::Drawing::Font(L"Arial Black", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnClusterConditions->ForeColor = System::Drawing::Color::Black;
+			this->btnClusterConditions->Location = System::Drawing::Point(14, 134);
+			this->btnClusterConditions->Name = L"btnClusterConditions";
+			this->btnClusterConditions->Size = System::Drawing::Size(191, 40);
+			this->btnClusterConditions->TabIndex = 6;
+			this->btnClusterConditions->Text = L"Set Cluster Conditions";
+			this->btnClusterConditions->UseVisualStyleBackColor = false;
+			this->btnClusterConditions->Click += gcnew System::EventHandler(this, &MainForm::btnClusterConditions_Click);
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SteelBlue;
 			this->ClientSize = System::Drawing::Size(884, 462);
+			this->Controls->Add(this->btnClusterConditions);
+			this->Controls->Add(this->btnSetKing);
 			this->Controls->Add(this->btnSetIMF);
-			this->Controls->Add(this->tabControl1);
 			this->Controls->Add(this->btnClose);
 			this->Controls->Add(this->btnRunAll);
 			this->Controls->Add(this->pgBar);
@@ -203,7 +230,6 @@ namespace MassCluster {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MainForm";
 			this->Text = L"Massive Cluster Simulation";
-			this->tabControl1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -211,5 +237,6 @@ namespace MassCluster {
 
 
 			 
-	};
+	
+};
 }
