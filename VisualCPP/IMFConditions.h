@@ -129,6 +129,7 @@ namespace MassCluster {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(IMFConditions::typeid));
 			this->lblm0 = (gcnew System::Windows::Forms::Label());
 			this->lblm1 = (gcnew System::Windows::Forms::Label());
 			this->lblm2 = (gcnew System::Windows::Forms::Label());
@@ -319,6 +320,7 @@ namespace MassCluster {
 			this->txtM0->Name = L"txtM0";
 			this->txtM0->Size = System::Drawing::Size(100, 20);
 			this->txtM0->TabIndex = 18;
+			this->txtM0->Text = L"0.01";
 			// 
 			// txtM1
 			// 
@@ -326,6 +328,7 @@ namespace MassCluster {
 			this->txtM1->Name = L"txtM1";
 			this->txtM1->Size = System::Drawing::Size(100, 20);
 			this->txtM1->TabIndex = 19;
+			this->txtM1->Text = L"0.08";
 			// 
 			// txtM2
 			// 
@@ -333,6 +336,7 @@ namespace MassCluster {
 			this->txtM2->Name = L"txtM2";
 			this->txtM2->Size = System::Drawing::Size(100, 20);
 			this->txtM2->TabIndex = 20;
+			this->txtM2->Text = L"0.05";
 			// 
 			// txtM3
 			// 
@@ -340,6 +344,7 @@ namespace MassCluster {
 			this->txtM3->Name = L"txtM3";
 			this->txtM3->Size = System::Drawing::Size(100, 20);
 			this->txtM3->TabIndex = 21;
+			this->txtM3->Text = L"500.0";
 			// 
 			// txtMmin
 			// 
@@ -347,6 +352,7 @@ namespace MassCluster {
 			this->txtMmin->Name = L"txtMmin";
 			this->txtMmin->Size = System::Drawing::Size(100, 20);
 			this->txtMmin->TabIndex = 22;
+			this->txtMmin->Text = L"0.15";
 			// 
 			// txtMmax
 			// 
@@ -354,6 +360,7 @@ namespace MassCluster {
 			this->txtMmax->Name = L"txtMmax";
 			this->txtMmax->Size = System::Drawing::Size(100, 20);
 			this->txtMmax->TabIndex = 23;
+			this->txtMmax->Text = L"500";
 			// 
 			// textBox7
 			// 
@@ -361,6 +368,7 @@ namespace MassCluster {
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(100, 20);
 			this->textBox7->TabIndex = 24;
+			this->textBox7->Text = L"-99";
 			// 
 			// txtAlpha1
 			// 
@@ -368,6 +376,7 @@ namespace MassCluster {
 			this->txtAlpha1->Name = L"txtAlpha1";
 			this->txtAlpha1->Size = System::Drawing::Size(100, 20);
 			this->txtAlpha1->TabIndex = 25;
+			this->txtAlpha1->Text = L"0.3";
 			// 
 			// txtAlpha2
 			// 
@@ -375,6 +384,7 @@ namespace MassCluster {
 			this->txtAlpha2->Name = L"txtAlpha2";
 			this->txtAlpha2->Size = System::Drawing::Size(100, 20);
 			this->txtAlpha2->TabIndex = 26;
+			this->txtAlpha2->Text = L"1.3";
 			// 
 			// txtAlpha3
 			// 
@@ -382,6 +392,7 @@ namespace MassCluster {
 			this->txtAlpha3->Name = L"txtAlpha3";
 			this->txtAlpha3->Size = System::Drawing::Size(100, 20);
 			this->txtAlpha3->TabIndex = 27;
+			this->txtAlpha3->Text = L"2.35";
 			// 
 			// ddlMIMFS
 			// 
@@ -391,6 +402,7 @@ namespace MassCluster {
 			this->ddlMIMFS->Name = L"ddlMIMFS";
 			this->ddlMIMFS->Size = System::Drawing::Size(100, 21);
 			this->ddlMIMFS->TabIndex = 28;
+			this->ddlMIMFS->Text = L"Type 1";
 			// 
 			// btnSaveClose
 			// 
@@ -454,6 +466,7 @@ namespace MassCluster {
 			this->Controls->Add(this->lblm2);
 			this->Controls->Add(this->lblm1);
 			this->Controls->Add(this->lblm0);
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"IMFConditions";
 			this->Text = L"Kroupa-Salpeter IMF Conditions";
 			this->ResumeLayout(false);
