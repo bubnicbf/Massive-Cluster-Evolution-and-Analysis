@@ -3,6 +3,8 @@
 #include "IMFConditions.h"
 #include "KingConditions.h"
 #include "ClusterConditions.h"
+#include "Padova.h"
+
 
 namespace MassCluster {
 
@@ -49,6 +51,7 @@ namespace MassCluster {
 	private: System::Windows::Forms::Button^  btnSetIMF;
 	private: System::Windows::Forms::Button^  btnSetKing;
 	private: System::Windows::Forms::Button^  btnClusterConditions;
+	private: System::Windows::Forms::Button^  btnPadova;
 
 	private: System::ComponentModel::IContainer^  components;
 
@@ -115,6 +118,15 @@ namespace MassCluster {
 		//this->Hide();
 	}
 
+
+	private: System::Void btnPadova_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		Padova ^ newForm = gcnew Padova(this);
+		newForm->Show();
+	}
+
+
+
 #pragma endregion
 
 
@@ -133,6 +145,7 @@ namespace MassCluster {
 			this->btnSetIMF = (gcnew System::Windows::Forms::Button());
 			this->btnSetKing = (gcnew System::Windows::Forms::Button());
 			this->btnClusterConditions = (gcnew System::Windows::Forms::Button());
+			this->btnPadova = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// pgBar
@@ -214,12 +227,27 @@ namespace MassCluster {
 			this->btnClusterConditions->UseVisualStyleBackColor = false;
 			this->btnClusterConditions->Click += gcnew System::EventHandler(this, &MainForm::btnClusterConditions_Click);
 			// 
+			// btnPadova
+			// 
+			this->btnPadova->BackColor = System::Drawing::Color::Silver;
+			this->btnPadova->Font = (gcnew System::Drawing::Font(L"Arial Black", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnPadova->ForeColor = System::Drawing::Color::Black;
+			this->btnPadova->Location = System::Drawing::Point(681, 12);
+			this->btnPadova->Name = L"btnPadova";
+			this->btnPadova->Size = System::Drawing::Size(191, 40);
+			this->btnPadova->TabIndex = 7;
+			this->btnPadova->Text = L"Padova Database";
+			this->btnPadova->UseVisualStyleBackColor = false;
+			this->btnPadova->Click += gcnew System::EventHandler(this, &MainForm::btnPadova_Click);
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::SteelBlue;
 			this->ClientSize = System::Drawing::Size(884, 462);
+			this->Controls->Add(this->btnPadova);
 			this->Controls->Add(this->btnClusterConditions);
 			this->Controls->Add(this->btnSetKing);
 			this->Controls->Add(this->btnSetIMF);
